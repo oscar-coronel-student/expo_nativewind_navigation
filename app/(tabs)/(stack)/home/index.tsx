@@ -8,19 +8,19 @@ const HomeScreen = () => {
     return <>
         <View className="px-5 pt-5">
 
-            <Link href='/(stack)/products' asChild>
+            <Link href='/(tabs)/(stack)/products' asChild>
                 <CustomButton text="Productos" className='mb-2' variant='contained' />
             </Link>
             
-            <Link href='/(stack)/profile' asChild>
+            <Link href='/(tabs)/(stack)/profile' asChild>
                 <CustomButton text="Perfil" className='mb-2' variant='contained' color='secondary' />
             </Link>
 
-            <Link href='/(stack)/settings' asChild>
+            <Link href='/(tabs)/(stack)/settings' asChild>
                 <CustomButton text="Ajustes" className='mb-2' variant='contained' color='tertiary' />
             </Link>
 
-            <Link href='/(stack)/products' asChild>
+            <Link href='/(tabs)/(stack)/products' asChild>
                 <CustomButton text="Salir" className='mb-2' variant='text-only' />
             </Link>
 
