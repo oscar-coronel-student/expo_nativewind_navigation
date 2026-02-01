@@ -17,29 +17,30 @@ const _HomeStackLayout = () => {
                 contentStyle: {
                     backgroundColor: 'white'
                 },
+                animation: 'ios_from_right'
             }}
         >
             <Stack.Screen
-                name='home'
+                name='home/index'
                 options={{
                     title: 'Inicio'
                 }}
             />
             <Stack.Screen
-                name='products'
+                name='products/index'
                 options={{
-                    title: 'Productos',
+                    // title: 'Productos',
                     // animation: 'ios_from_right'
                 }}
             />
             <Stack.Screen
-                name='profile'
+                name='profile/index'
                 options={{
                     title: 'Mi Perfil'
                 }}
             />
             <Stack.Screen
-                name='settings'
+                name='settings/index'
                 options={{
                     title: 'Ajustes'
                 }}

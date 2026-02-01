@@ -1,4 +1,7 @@
-export const products = [
+import { IProduct } from "../interfaces/product.interface";
+
+
+export const products: IProduct[] = [
     {
         id: '1',
         title: 'Auriculares Inalámbricos',
