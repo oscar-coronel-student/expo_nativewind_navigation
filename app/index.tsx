@@ -5,7 +5,7 @@ function App() {
 
     // return <Redirect href='/(stack)/home' />
 
-    return <Redirect href='/(tabs)/home' />
+    return <Redirect href='/(drawer)/user' />
 
     // return <>
     //     <View className="mt-6 mx-2.5 bg-primary flex-1">
