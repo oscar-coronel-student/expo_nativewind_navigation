@@ -1,21 +1,51 @@
+import { DrawerContent } from '@/src/components/shared/DrawerContent';
+import { Ionicons } from '@expo/vector-icons';
 import { Drawer } from 'expo-router/drawer';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 
 export default function DrawerLayout() {
+
+    const { bottom, top } = useSafeAreaInsets();
+
     return <>
-        <Drawer>
+        <Drawer
+            drawerContent={ DrawerContent }
+            screenOptions={{
+                overlayColor: 'rgba(0,0,0,0.4)',
+                drawerActiveTintColor: 'indigo',
+                headerShadowVisible: false,
+                sceneStyle: {
+                    backgroundColor: 'white'
+                },
+            }}
+        >
             <Drawer.Screen
                 name='user/index'
                 options={{
                     drawerLabel: 'Usuarios',
-                    title: 'Lista de Usuarios'
+                    title: 'Lista de Usuarios',
+                    drawerIcon: ({ color, size }) => (
+                        <Ionicons
+                            name='person-circle-outline'
+                            color={ color }
+                            size={ size }
+                        />
+                    )
                 }}
             />
             <Drawer.Screen
                 name='schedule/index'
                 options={{
                     drawerLabel: 'Calendario',
-                    title: `Calendario ${ new Date().getFullYear() }`
+                    title: `Calendario ${ new Date().getFullYear() }`,
+                    drawerIcon: ({ color, size }) => (
+                        <Ionicons
+                            name='calendar-outline'
+                            color={ color }
+                            size={ size }
+                        />
+                    )
                 }}
             />
         </Drawer>
