@@ -7,8 +7,9 @@ export default function DrawerLayout() {
 
     return <>
         <Drawer
-            drawerContent={ DrawerContent } 
+            drawerContent={ DrawerContent }
             screenOptions={{
+                headerShown: false,
                 overlayColor: 'rgba(0,0,0,0.4)',
                 drawerActiveTintColor: 'indigo',
                 headerShadowVisible: false,
@@ -17,6 +18,21 @@ export default function DrawerLayout() {
                 },
             }}
         >
+            <Drawer.Screen
+                name='(tabs)'
+                options={{
+                    // headerShown: false,
+                    drawerLabel: 'Inicio',
+                    title: `Inicio`,
+                    drawerIcon: ({ color, size }) => (
+                        <Ionicons
+                            name='home-outline'
+                            color={ color }
+                            size={ size }
+                        />
+                    )
+                }}
+            />
             <Drawer.Screen
                 name='user/index'
                 options={{

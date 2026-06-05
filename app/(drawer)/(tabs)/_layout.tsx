@@ -23,7 +23,7 @@ const _TabsLayout = () => {
                 }
             })}
         >
-            <Tabs.Screen name='(stack)' options={{ title: 'Stack' }} />
+            <Tabs.Screen name='(stack)' options={{ title: 'Stack', headerShown: false }} />
             <Tabs.Screen name="home/index" options={{ title: 'Home' }} />
             <Tabs.Screen name="favorites/index" options={{ title: 'Favoritos' }}  />
         </Tabs>
