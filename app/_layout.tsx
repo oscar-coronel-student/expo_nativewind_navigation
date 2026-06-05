@@ -1,8 +1,8 @@
+import { useFonts } from 'expo-font';
+import { Slot, SplashScreen } from "expo-router";
 import { useEffect } from 'react';
 import { BackHandler } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Slot, SplashScreen } from "expo-router";
-import { useFonts } from 'expo-font';
 
 import './../assets/styles/global.css';
 
