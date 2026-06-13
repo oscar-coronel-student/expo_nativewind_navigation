@@ -1,5 +1,7 @@
+import { HeaderLeft } from '@/src/components/shared/HeaderLeft';
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from "expo-router";
+import { View } from 'react-native';
 
 
 const _TabsLayout = () => {
@@ -20,6 +22,13 @@ const _TabsLayout = () => {
                         default:
                             return <></>;
                     }
+                },
+                headerLeft: ({ tintColor, canGoBack }) => {
+                    return <View
+                        className='pl-4'
+                    >
+                        <HeaderLeft tintColor={tintColor} canGoBack={canGoBack} />
+                    </View>
                 }
             })}
         >

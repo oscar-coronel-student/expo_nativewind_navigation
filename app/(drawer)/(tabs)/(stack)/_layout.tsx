@@ -1,10 +1,12 @@
+import { HeaderLeft } from "@/src/components/shared/HeaderLeft";
 import { Stack } from "expo-router";
 
 
 const _HomeStackLayout = () => {
+
     return <>
         <Stack
-            screenOptions={{
+            screenOptions={ () => ({
                 headerShown: true,
                 headerShadowVisible: false,
                 headerStyle: {
@@ -13,12 +15,15 @@ const _HomeStackLayout = () => {
                 headerTitleStyle: {
                     color: 'black',
                 },
-                headerTitleAlign: 'center',
+                // headerTitleAlign: 'center',
                 contentStyle: {
                     backgroundColor: 'white'
                 },
-                animation: 'ios_from_right'
-            }}
+                animation: 'ios_from_right',
+                headerLeft: ({ tintColor, canGoBack }) => {
+                    return <HeaderLeft tintColor={tintColor} canGoBack={canGoBack} />;
+                }
+            })}
         >
             <Stack.Screen
                 name='home/index'

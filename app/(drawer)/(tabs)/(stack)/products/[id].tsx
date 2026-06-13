@@ -1,7 +1,6 @@
-import { General } from "@/src/helpers/general";
 import { IProduct } from "@/src/interfaces/product.interface";
 import { products } from "@/src/store/products.store";
-import { Redirect, useLocalSearchParams } from "expo-router";
+import { Redirect, useLocalSearchParams, useNavigation } from "expo-router";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 
@@ -12,13 +11,13 @@ interface ProductScreenProps {
 const ProductScreen = ({
 }: ProductScreenProps) => {
 
+    const navigation = useNavigation();
     const { id } = useLocalSearchParams<{id: string}>();
 
     const [product, setProduct] = useState<IProduct|null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     
     const getProductById: (id: string) => Promise<void> = async (id: string) => {
-        await General.sleep();
         const productFind: IProduct | null = products.find(product => product.id === id) ?? null;
         setProduct(productFind);
         setIsLoading(false)
@@ -28,6 +27,12 @@ const ProductScreen = ({
     useEffect(() => {
         getProductById(id);
     }, []);
+
+    useEffect(() => {
+        navigation.setOptions({
+            title: product?.title ?? 'Producto'
+        });
+    }, [product])
 
 
     if(!isLoading && !product){

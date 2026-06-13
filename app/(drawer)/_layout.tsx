@@ -9,7 +9,7 @@ export default function DrawerLayout() {
         <Drawer
             drawerContent={ DrawerContent }
             screenOptions={{
-                headerShown: false,
+                // headerShown: false,
                 overlayColor: 'rgba(0,0,0,0.4)',
                 drawerActiveTintColor: 'indigo',
                 headerShadowVisible: false,
@@ -21,7 +21,7 @@ export default function DrawerLayout() {
             <Drawer.Screen
                 name='(tabs)'
                 options={{
-                    // headerShown: false,
+                    headerShown: false,
                     drawerLabel: 'Inicio',
                     title: `Inicio`,
                     drawerIcon: ({ color, size }) => (
